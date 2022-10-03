@@ -38,12 +38,12 @@ function toOpenModal(ImgUrl) {
   instance = basicLightbox.create(`
     <img src="${ImgUrl}" width="1000" height="800">
 `);
-  window.addEventListener("keydown", toCloseModal);
+  window.addEventListener("keyup", toCloseModal);
   instance.show();
 }
 function toCloseModal(evt) {
   if (evt.code === "Escape") {
     instance.close();
-    window.addEventListener("keydown", toCloseModal);
+    window.addEventListener("keyup", toCloseModal);
   }
 }
