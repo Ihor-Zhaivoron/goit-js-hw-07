@@ -2,11 +2,11 @@ import { galleryItems } from "./gallery-items.js";
 
 const galleryBox = document.querySelector(".gallery");
 
-createAndRenderGallery(galleryItems, galleryBox);
+createGallery(galleryItems, galleryBox);
 
 galleryBox.addEventListener("click", getBigImgUrl);
 
-function createAndRenderGallery(galleryItems, galleryBox) {
+function createGallery(galleryItems, galleryBox) {
   const galleryLi = galleryItems
     .map(({ preview, original, description }) => {
       return `
@@ -22,7 +22,7 @@ function createAndRenderGallery(galleryItems, galleryBox) {
 </div>`;
     })
     .join("");
-  galleryBox.insertAdjacentHTML("beforebegin", galleryLi);
+  galleryBox.innerHTML = galleryLi;
 }
 
 function getBigImgUrl(evt) {
