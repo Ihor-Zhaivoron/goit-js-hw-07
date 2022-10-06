@@ -44,6 +44,6 @@ function toOpenModal(ImgUrl) {
 function toCloseModal(evt) {
   if (evt.code === "Escape") {
     instance.close();
-    window.addEventListener("keyup", toCloseModal);
+    window.removeEventListener("keyup", toCloseModal);
   }
 }
